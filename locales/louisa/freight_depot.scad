@@ -38,13 +38,14 @@ LouisaFreightDepot()
                                batten_count = 20);
                 OpenGable(depth, thickness, roof_height, wall_height);
             };
-        translate([ Inches(90.5), Inches(-3), Inches(24) ]) 
+            translate([ Inches(90.5), Inches(-3), Inches(20) ]) 
                 cube([ Inches(47), Inches(12), 76 * Inches()], false);
             
         }
 
-        rotate([ 0, 0, 90 ]) translate([ 0, -Inches(90.5), Inches(36) ])
-            DoubleSashWindow(width = 47 * Inches(),
+        translate([ Inches(90.5), Inches(6), Inches(20) ])
+          rotate([90,0,0]) 
+                    DoubleSashWindow(width = 47 * Inches(),
                              height = 76 * Inches(),
                              depth = 6 * Inches(),
                              casing_width = 5.75 * Inches(),

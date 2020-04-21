@@ -50,12 +50,12 @@ module DoubleSashWindow(
   inner_height = height - 2 * jamb_width;
   inner_width = width - 2 * jamb_width;
 
-  rotate([90,0,90]) union() {
+  union() {
     // draw the casing
     difference() {
       translate([0,0,-casing_thickness]) cube([width,height,depth + 2 * casing_thickness], false);
-      translate([jamb_width,jamb_width,-1]) 
-        cube([inner_width, inner_height, depth+2], false);
+      translate([jamb_width,jamb_width,-depth/2]) 
+        cube([inner_width, inner_height, depth*2], false);
     };
 
     // Draw the upper sash
@@ -82,11 +82,11 @@ module DoubleSashWindow(
   }
 }
 
-DoubleSashWindow(
-  width=48,
-  height=96,
-  depth=6,
-  casing_width=4,
-  casing_thickness=.75,
-  pane_cols=3,
-  pane_rows=3);
+DoubleSashWindow(width = 47 ,
+                             height = 76 ,
+                             depth = 6 ,
+                             casing_width = 5.75 ,
+                             casing_thickness = 1 ,
+                             casing_bottom = 2 ,
+                             pane_cols = 3,
+                             pane_rows = 3);
